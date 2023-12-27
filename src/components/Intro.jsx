@@ -6,7 +6,7 @@ import { UserPlusIcon } from "@heroicons/react/24/solid";
 //framer motion
 import {motion} from 'framer-motion'
 // assets
-import illustration from "../assets/intro2.jpg"
+import illustration from "../assets/illustration.jpg"
 
 const Intro = () => {
   return (
