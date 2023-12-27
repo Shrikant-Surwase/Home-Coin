@@ -10,6 +10,7 @@ import AddBudgetForm from "../components/AddBudgetForm";
 import AddExpenseForm from "../components/AddExpenseForm";
 import BudgetItem from "../components/BudgetItem";
 import Table from "../components/Table";
+import {motion} from 'framer-motion'
 
 //  helper functions
 import {
@@ -20,7 +21,7 @@ import {
   waait,
 } from "../helpers";
 
-// loader
+// loadernp
 export function dashboardLoader() {
   const userName = fetchData("userName");
   const budgets = fetchData("budgets");
@@ -90,9 +91,9 @@ const Dashboard = () => {
     <>
       {userName ? (
         <div className="dashboard">
-          <h1>
+          <motion.h1 initial={{x:-200,y:0}} animate={{x:0,y:0}} transition={{type:"spring"}}>
             Welcome back, <span className="accent">{userName}</span>
-          </h1>
+          </motion.h1>
           <div className="grid-sm">
             {budgets && budgets.length > 0 ? (
               <div className="grid-lg">
@@ -124,8 +125,8 @@ const Dashboard = () => {
               </div>
             ) : (
               <div className="grid-sm">
-                <p>Personal budgeting is the secret to financial freedom.</p>
-                <p>Create a budget to get started!</p>
+                <motion.p initial={{x:0,y:100}} animate={{x:0,y:0}} transition={{type:"spring"}}>Personal budgeting is the secret to financial freedom.</motion.p>
+                <motion.p initial={{x:0,y:100}} animate={{x:0,y:0}} transition={{type:"spring",duration:1.2 }}>Create a budget to get started!</motion.p>
                 <AddBudgetForm />
               </div>
             )}

@@ -18,7 +18,7 @@ export async function logoutAction() {
   deleteItem({
     key: "expenses"
   })
-  toast.success("You’ve deleted your account!")
+  toast.warning("You’ve deleted your account!")
   // return redirect
   return redirect("/")
 }
